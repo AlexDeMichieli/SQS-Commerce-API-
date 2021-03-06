@@ -28,9 +28,16 @@ function App() {
     products.map((item) => {
       return <p>Item Quantity ===> {item.quantity}</p>;
     });
-
+    let phones = ['503-544-8937']
   return (
-    <div className="App">{loading ? <p>Fetching data</p> : inventory }</div>
+    <div className="App">
+    
+    {loading ? <p>Fetching data</p> : inventory }
+    {phones.map(item=>{
+      let tel = 'tel:'+ Object.entries({item})
+      return <a href={tel}>{item}</a>
+    })}
+    </div>
   );
 }
 
